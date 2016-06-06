@@ -1,7 +1,7 @@
 Build
 -----
-docker build -t docker-wasm .
+docker build -t docker-kudu .
 
 Run
 ---
-docker run -it docker-wasm
+docker run -d --name kudu-master -p 8051:8051 -it docker-kudu master

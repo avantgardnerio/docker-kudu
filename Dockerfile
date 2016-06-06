@@ -13,3 +13,7 @@ RUN	apt-get -y install cmake
 RUN mkdir -p /kudu/build/release && cd /kudu/build/release && \
 	../../thirdparty/installed/bin/cmake -DCMAKE_BUILD_TYPE=release ../.. && \
 	make -j4
+
+COPY run.sh /
+ENTRYPOINT ["/run.sh"]
+EXPOSE 8050 8051
